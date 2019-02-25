@@ -30,24 +30,32 @@ import qualified Web.Authenticate.OAuth as OA
 -- get the oauth consumer secrets
 tokens :: OAuth
 tokens = twitterOAuth
-    { oauthConsumerKey = ""
-    , oauthConsumerSecret = ""
+    { oauthConsumerKey = "asfdas"
+    , oauthConsumerSecret = "sdf"
     }
 
 -- get the oauth secrets
 credential :: Credential
 credential = Credential
-            [("oauth_token", ""),
-             ("oauth_token_secret", "")]
+            [("oauth_token", "fsdaa"),
+             ("oauth_token_secret", "sadfas")]
 
+
+twInfo :: IO TWInfo
+twInfo = do
+        credentials <- UA.getCredentials
+        tokens <- UA.getConsumerAuth credentials
+        oauthCredentials <- UA.getUserCredentials credentials
+        let twitterLoginAuth = {twToken = {twOAuth= tokens, twCredential= oauthCredentials}, twProxy = Nothing}
+        return twitterLoginAuth
 
 
 -- Get the TWInfo for authentication
-twInfo :: TWInfo
-twInfo = def
-       { twToken = def {twOAuth= tokens, twCredential= credential}
-       , twProxy = Nothing 
-       }
+-- twInfo :: TWInfo
+-- twInfo = def
+--       { twToken = def {twOAuth= tokens, twCredential= credential}
+--       , twProxy = Nothing 
+--       }
 
 getManager :: IO Manager
 getManager = newManager tlsManagerSettings
