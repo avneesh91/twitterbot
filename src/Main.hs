@@ -1,5 +1,5 @@
 {-# LANGUAGE FlexibleContexts #-}
-
+{-# LANGUAGE OverloadedStrings #-}
 module Main where
 
 import Conduit
@@ -44,27 +44,19 @@ credential = Credential
 twInfo :: IO TWInfo
 twInfo = do
         credentials <- UA.getCredentials
-        tokens <- UA.getConsumerAuth credentials
-        oauthCredentials <- UA.getUserCredentials credentials
-        let twitterLoginAuth = {twToken = {twOAuth= tokens, twCredential= oauthCredentials}, twProxy = Nothing}
+        let tokens = UA.consumerAuth credentials
+        let oauthCredentials = UA.userCredentials credentials
+        let twitterLoginAuth = TWInfo{ twToken = TWToken tokens oauthCredentials, twProxy = Nothing}
         return twitterLoginAuth
-
-
--- Get the TWInfo for authentication
--- twInfo :: TWInfo
--- twInfo = def
---       { twToken = def {twOAuth= tokens, twCredential= credential}
---       , twProxy = Nothing 
---       }
 
 getManager :: IO Manager
 getManager = newManager tlsManagerSettings
 
-
 getStream =  do
                mgr <- getManager
+               impureTWInfo <- twInfo
                runResourceT $ do
-                   src <- stream twInfo mgr $ statusesFilter [Track ["python", "Node.js"]]
+                   src <- stream impureTWInfo mgr $ statusesFilter [Track ["python", "Node.js"]]
                    C.runConduit $ src C..| CL.mapM_ (lift . printTL)
 
 showStatus :: Status -> T.Text
@@ -81,4 +73,4 @@ printTL (SRetweetedStatus s) = T.putStrLn $ T.concat [ s ^. user . userScreenNam
 printTL x = print x
 
 main :: IO()
-main = T.putStrLn "Derpr"
+main = getStream

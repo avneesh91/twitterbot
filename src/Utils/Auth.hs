@@ -13,7 +13,7 @@ data Authentication = Auth { consumerAuth ::OA.OAuth ,
                              userCredentials:: OA.Credential
                            } deriving (Show)
 
-getConsumerAuth :: IO Authentication -> IO OA.OAuth
+getConsumerAuth ::  IO Authentication -> IO OA.OAuth
 getConsumerAuth a  = a >>= \x -> return $ consumerAuth x
 
 getUserCredentials :: IO Authentication -> IO OA.Credential
