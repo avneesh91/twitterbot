@@ -1,0 +1,6 @@
+Configuring SHA-1.6.4.4...
+Preprocessing library for SHA-1.6.4.4..
+Building library for SHA-1.6.4.4..
+[1 of 1] Compiling Data.Digest.Pure.SHA ( src/Data/Digest/Pure/SHA.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Digest/Pure/SHA.o )
+Installing library in /home/mightymosquito/.stack/snapshots/x86_64-linux/lts-13.3/8.6.3/lib/x86_64-linux-ghc-8.6.3/SHA-1.6.4.4-1GMMHy6WdrlGpMrtGTWHUv
+Registering library for SHA-1.6.4.4..

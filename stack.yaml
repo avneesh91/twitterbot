@@ -1,0 +1,9 @@
+resolver: lts-13.3
+
+packages:
+- .
+
+extra-deps:
+        - twitter-types-0.7.2.2
+        - twitter-types-lens-0.7.2
+        - twitter-conduit-0.3.0

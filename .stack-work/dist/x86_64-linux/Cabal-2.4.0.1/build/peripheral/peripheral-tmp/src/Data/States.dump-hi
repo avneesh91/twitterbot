@@ -1,0 +1,1384 @@
+
+==================== FINAL INTERFACE ====================
+2019-01-29 16:52:45.349356856 UTC
+
+interface main:Data.States 8063
+  interface hash: f65be9c1a2065900ec8528cdc50fa3ea
+  ABI hash: 23f0d86d95fe86e27f2223f01880787d
+  export-list hash: 177430a920cef1feb81bffd64ab6844e
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: fe3741a5efca0c2476521370e88c2055
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.States.Event{Data.States.DispatchAddtion Data.States.DispatchRemoval Data.States.FMIncoming Data.States.GenericIncoming Data.States.ISTAddition Data.States.ISTRemoval Data.States.Manifestation}
+  Data.States.Package{Data.States.Package address status status_history wbn weight}
+  Data.States.PackageStatus{Data.States.In_Transit Data.States.Manifested Data.States.Out_For_Delivery Data.States.Pending Data.States.Recieved}
+module dependencies:
+package dependencies: base-4.12.0.0* ghc-prim-0.5.3
+                      integer-gmp-1.0.2.0
+orphans: base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity base-4.12.0.0:Data.Monoid
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:GHC.Generics
+                         base-4.12.0.0:GHC.IO.Exception
+import  -/  base-4.12.0.0:GHC.Base cc906f98291a1b830546e99a96674547
+import  -/  base-4.12.0.0:GHC.Show 4e438f26d903388cc6c2c5d64ed01b98
+import  -/  base-4.12.0.0:Prelude 5c01365ec01f83bd405ac01cbb9a8d76
+import  -/  ghc-prim-0.5.3:GHC.Classes e0d9c979f6368701f34fa421754d2cce
+import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
+42c058c605883aaf2201904e768a6b9e
+  $fEqEvent :: GHC.Classes.Eq Data.States.Event
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.States.Event
+                  Data.States.$fEqEvent_$c==
+                  Data.States.$fEqEvent_$c/= -}
+42c058c605883aaf2201904e768a6b9e
+  $fEqEvent_$c/= ::
+    Data.States.Event -> Data.States.Event -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Data.States.Event) (y :: Data.States.Event) ->
+                 case x of wild {
+                   Data.States.Manifestation
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.Manifestation -> GHC.Types.False }
+                   Data.States.FMIncoming
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.FMIncoming -> GHC.Types.False }
+                   Data.States.GenericIncoming
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.GenericIncoming -> GHC.Types.False }
+                   Data.States.ISTAddition
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.ISTAddition -> GHC.Types.False }
+                   Data.States.ISTRemoval
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.ISTRemoval -> GHC.Types.False }
+                   Data.States.DispatchAddtion
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.DispatchAddtion -> GHC.Types.False }
+                   Data.States.DispatchRemoval
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.DispatchRemoval -> GHC.Types.False } }) -}
+42c058c605883aaf2201904e768a6b9e
+  $fEqEvent_$c== ::
+    Data.States.Event -> Data.States.Event -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Data.States.Event)
+                   (ds1 :: Data.States.Event) ->
+                 case ds of wild {
+                   Data.States.Manifestation
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.Manifestation -> GHC.Types.True }
+                   Data.States.FMIncoming
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.FMIncoming -> GHC.Types.True }
+                   Data.States.GenericIncoming
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.GenericIncoming -> GHC.Types.True }
+                   Data.States.ISTAddition
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.ISTAddition -> GHC.Types.True }
+                   Data.States.ISTRemoval
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.ISTRemoval -> GHC.Types.True }
+                   Data.States.DispatchAddtion
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.DispatchAddtion -> GHC.Types.True }
+                   Data.States.DispatchRemoval
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.DispatchRemoval -> GHC.Types.True } }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fEqPackage :: GHC.Classes.Eq Data.States.Package
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.States.Package
+                  Data.States.$fEqPackage_$c==
+                  Data.States.$fEqPackage_$c/= -}
+6fba0c030491e0689ad15c82efde61df
+  $fEqPackageStatus :: GHC.Classes.Eq Data.States.PackageStatus
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.States.PackageStatus
+                  Data.States.$fEqPackageStatus_$c==
+                  Data.States.$fEqPackageStatus_$c/= -}
+6fba0c030491e0689ad15c82efde61df
+  $fEqPackageStatus_$c/= ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Data.States.PackageStatus)
+                   (y :: Data.States.PackageStatus) ->
+                 case x of wild {
+                   Data.States.Manifested
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.Manifested -> GHC.Types.False }
+                   Data.States.In_Transit
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.In_Transit -> GHC.Types.False }
+                   Data.States.Pending
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True Data.States.Pending -> GHC.Types.False }
+                   Data.States.Out_For_Delivery
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.Out_For_Delivery -> GHC.Types.False }
+                   Data.States.Recieved
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.Recieved -> GHC.Types.False } }) -}
+6fba0c030491e0689ad15c82efde61df
+  $fEqPackageStatus_$c== ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Data.States.PackageStatus)
+                   (ds1 :: Data.States.PackageStatus) ->
+                 case ds of wild {
+                   Data.States.Manifested
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.Manifested -> GHC.Types.True }
+                   Data.States.In_Transit
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.In_Transit -> GHC.Types.True }
+                   Data.States.Pending
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Data.States.Pending -> GHC.Types.True }
+                   Data.States.Out_For_Delivery
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.Out_For_Delivery -> GHC.Types.True }
+                   Data.States.Recieved
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.Recieved -> GHC.Types.True } }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fEqPackage_$c/= ::
+    Data.States.Package -> Data.States.Package -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)><S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Data.States.Package) (y :: Data.States.Package) ->
+                 case Data.States.$fEqPackage_$c== x y of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fEqPackage_$c== ::
+    Data.States.Package -> Data.States.Package -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)><S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)>,
+     Inline: [2],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Data.States.Package) (w1 :: Data.States.Package) ->
+                 case w of ww { Data.States.Package ww1 ww2 ww3 ww4 ww5 ->
+                 case w1 of ww6 { Data.States.Package ww7 ww8 ww9 ww10 ww11 ->
+                 Data.States.$w$c==
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww7
+                   ww8
+                   ww9
+                   ww10
+                   ww11 } }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fOrdPackage :: GHC.Classes.Ord Data.States.Package
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.States.Package
+                  Data.States.$fEqPackage
+                  Data.States.$fOrdPackage_$ccompare
+                  Data.States.$fOrdPackage_$c<
+                  Data.States.$fOrdPackage_$c<=
+                  Data.States.$fOrdPackage_$c>
+                  Data.States.$fOrdPackage_$c>=
+                  Data.States.$fOrdPackage_$cmax
+                  Data.States.$fOrdPackage_$cmin -}
+6fba0c030491e0689ad15c82efde61df
+  $fOrdPackageStatus :: GHC.Classes.Ord Data.States.PackageStatus
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.States.PackageStatus
+                  Data.States.$fEqPackageStatus
+                  Data.States.$fOrdPackageStatus_$ccompare
+                  Data.States.$fOrdPackageStatus_$c<
+                  Data.States.$fOrdPackageStatus_$c<=
+                  Data.States.$fOrdPackageStatus_$c>
+                  Data.States.$fOrdPackageStatus_$c>=
+                  Data.States.$fOrdPackageStatus_$cmax
+                  Data.States.$fOrdPackageStatus_$cmin -}
+6fba0c030491e0689ad15c82efde61df
+  $fOrdPackageStatus_$c< ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Data.States.PackageStatus)
+                   (b :: Data.States.PackageStatus) ->
+                 case a of wild {
+                   Data.States.Manifested
+                   -> case b of wild1 {
+                        Data.States.Manifested -> GHC.Types.False
+                        Data.States.In_Transit -> GHC.Types.True
+                        Data.States.Pending -> GHC.Types.True
+                        Data.States.Out_For_Delivery -> GHC.Types.True
+                        Data.States.Recieved -> GHC.Types.True }
+                   Data.States.In_Transit
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.Pending -> GHC.Types.True
+                        Data.States.Out_For_Delivery -> GHC.Types.True
+                        Data.States.Recieved -> GHC.Types.True }
+                   Data.States.Pending
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.Out_For_Delivery -> GHC.Types.True
+                        Data.States.Recieved -> GHC.Types.True }
+                   Data.States.Out_For_Delivery
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False Data.States.Recieved -> GHC.Types.True }
+                   Data.States.Recieved
+                   -> case b of wild1 { DEFAULT -> GHC.Types.False } }) -}
+6fba0c030491e0689ad15c82efde61df
+  $fOrdPackageStatus_$c<= ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Data.States.PackageStatus)
+                   (b :: Data.States.PackageStatus) ->
+                 case b of wild {
+                   Data.States.Manifested
+                   -> case a of wild1 {
+                        Data.States.Manifested -> GHC.Types.True
+                        Data.States.In_Transit -> GHC.Types.False
+                        Data.States.Pending -> GHC.Types.False
+                        Data.States.Out_For_Delivery -> GHC.Types.False
+                        Data.States.Recieved -> GHC.Types.False }
+                   Data.States.In_Transit
+                   -> case a of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.Pending -> GHC.Types.False
+                        Data.States.Out_For_Delivery -> GHC.Types.False
+                        Data.States.Recieved -> GHC.Types.False }
+                   Data.States.Pending
+                   -> case a of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.Out_For_Delivery -> GHC.Types.False
+                        Data.States.Recieved -> GHC.Types.False }
+                   Data.States.Out_For_Delivery
+                   -> case a of wild1 {
+                        DEFAULT -> GHC.Types.True Data.States.Recieved -> GHC.Types.False }
+                   Data.States.Recieved
+                   -> case a of wild1 { DEFAULT -> GHC.Types.True } }) -}
+6fba0c030491e0689ad15c82efde61df
+  $fOrdPackageStatus_$c> ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (a :: Data.States.PackageStatus)
+                   (b :: Data.States.PackageStatus) ->
+                 Data.States.$fOrdPackageStatus_$c< b a) -}
+6fba0c030491e0689ad15c82efde61df
+  $fOrdPackageStatus_$c>= ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Data.States.PackageStatus)
+                   (b :: Data.States.PackageStatus) ->
+                 case a of wild {
+                   Data.States.Manifested
+                   -> case b of wild1 {
+                        Data.States.Manifested -> GHC.Types.True
+                        Data.States.In_Transit -> GHC.Types.False
+                        Data.States.Pending -> GHC.Types.False
+                        Data.States.Out_For_Delivery -> GHC.Types.False
+                        Data.States.Recieved -> GHC.Types.False }
+                   Data.States.In_Transit
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.Pending -> GHC.Types.False
+                        Data.States.Out_For_Delivery -> GHC.Types.False
+                        Data.States.Recieved -> GHC.Types.False }
+                   Data.States.Pending
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        Data.States.Out_For_Delivery -> GHC.Types.False
+                        Data.States.Recieved -> GHC.Types.False }
+                   Data.States.Out_For_Delivery
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Data.States.Recieved -> GHC.Types.False }
+                   Data.States.Recieved
+                   -> case b of wild1 { DEFAULT -> GHC.Types.True } }) -}
+6fba0c030491e0689ad15c82efde61df
+  $fOrdPackageStatus_$ccompare ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Data.States.PackageStatus)
+                   (b :: Data.States.PackageStatus) ->
+                 case a of wild {
+                   Data.States.Manifested
+                   -> case b of wild1 {
+                        Data.States.Manifested -> GHC.Types.EQ
+                        Data.States.In_Transit -> GHC.Types.LT
+                        Data.States.Pending -> GHC.Types.LT
+                        Data.States.Out_For_Delivery -> GHC.Types.LT
+                        Data.States.Recieved -> GHC.Types.LT }
+                   Data.States.In_Transit
+                   -> case b of wild1 {
+                        Data.States.Manifested -> GHC.Types.GT
+                        Data.States.In_Transit -> GHC.Types.EQ
+                        Data.States.Pending -> GHC.Types.LT
+                        Data.States.Out_For_Delivery -> GHC.Types.LT
+                        Data.States.Recieved -> GHC.Types.LT }
+                   Data.States.Pending
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT
+                        Data.States.Pending -> GHC.Types.EQ
+                        Data.States.Out_For_Delivery -> GHC.Types.LT
+                        Data.States.Recieved -> GHC.Types.LT }
+                   Data.States.Out_For_Delivery
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT
+                        Data.States.Out_For_Delivery -> GHC.Types.EQ
+                        Data.States.Recieved -> GHC.Types.LT }
+                   Data.States.Recieved
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT
+                        Data.States.Recieved -> GHC.Types.EQ } }) -}
+6fba0c030491e0689ad15c82efde61df
+  $fOrdPackageStatus_$cmax ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> Data.States.PackageStatus
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (x :: Data.States.PackageStatus)
+                   (y :: Data.States.PackageStatus) ->
+                 case y of wild {
+                   Data.States.Manifested -> x
+                   Data.States.In_Transit
+                   -> case x of wild1 {
+                        DEFAULT -> Data.States.In_Transit
+                        Data.States.Pending -> Data.States.Pending
+                        Data.States.Out_For_Delivery -> Data.States.Out_For_Delivery
+                        Data.States.Recieved -> Data.States.Recieved }
+                   Data.States.Pending
+                   -> case x of wild1 {
+                        DEFAULT -> Data.States.Pending
+                        Data.States.Out_For_Delivery -> Data.States.Out_For_Delivery
+                        Data.States.Recieved -> Data.States.Recieved }
+                   Data.States.Out_For_Delivery
+                   -> case x of wild1 {
+                        DEFAULT -> Data.States.Out_For_Delivery
+                        Data.States.Recieved -> Data.States.Recieved }
+                   Data.States.Recieved
+                   -> case x of wild1 { DEFAULT -> Data.States.Recieved } }) -}
+6fba0c030491e0689ad15c82efde61df
+  $fOrdPackageStatus_$cmin ::
+    Data.States.PackageStatus
+    -> Data.States.PackageStatus -> Data.States.PackageStatus
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (x :: Data.States.PackageStatus)
+                   (y :: Data.States.PackageStatus) ->
+                 case y of wild {
+                   Data.States.Manifested
+                   -> case x of wild1 { DEFAULT -> Data.States.Manifested }
+                   Data.States.In_Transit
+                   -> case x of wild1 {
+                        DEFAULT -> wild1
+                        Data.States.Pending -> Data.States.In_Transit
+                        Data.States.Out_For_Delivery -> Data.States.In_Transit
+                        Data.States.Recieved -> Data.States.In_Transit }
+                   Data.States.Pending
+                   -> case x of wild1 {
+                        DEFAULT -> wild1
+                        Data.States.Out_For_Delivery -> Data.States.Pending
+                        Data.States.Recieved -> Data.States.Pending }
+                   Data.States.Out_For_Delivery
+                   -> case x of wild1 {
+                        DEFAULT -> wild1
+                        Data.States.Recieved -> Data.States.Out_For_Delivery }
+                   Data.States.Recieved -> x }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fOrdPackage_$c< ::
+    Data.States.Package -> Data.States.Package -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)><S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)>,
+     Inline: [2],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Data.States.Package) (w1 :: Data.States.Package) ->
+                 case w of ww { Data.States.Package ww1 ww2 ww3 ww4 ww5 ->
+                 case w1 of ww6 { Data.States.Package ww7 ww8 ww9 ww10 ww11 ->
+                 Data.States.$w$c< ww1 ww2 ww3 ww4 ww5 ww7 ww8 ww9 ww10 ww11 } }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fOrdPackage_$c<= ::
+    Data.States.Package -> Data.States.Package -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)><S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Data.States.Package) (b :: Data.States.Package) ->
+                 case Data.States.$fOrdPackage_$c< b a of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fOrdPackage_$c> ::
+    Data.States.Package -> Data.States.Package -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)><S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (a :: Data.States.Package) (b :: Data.States.Package) ->
+                 Data.States.$fOrdPackage_$c< b a) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fOrdPackage_$c>= ::
+    Data.States.Package -> Data.States.Package -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)><S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Data.States.Package) (b :: Data.States.Package) ->
+                 case Data.States.$fOrdPackage_$c< a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fOrdPackage_$ccompare ::
+    Data.States.Package -> Data.States.Package -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)><S(SLLLL),1*U(1*U,1*U,1*U,1*U(U),1*U)>,
+     Inline: [2],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Data.States.Package) (w1 :: Data.States.Package) ->
+                 case w of ww { Data.States.Package ww1 ww2 ww3 ww4 ww5 ->
+                 case w1 of ww6 { Data.States.Package ww7 ww8 ww9 ww10 ww11 ->
+                 Data.States.$w$ccompare
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww7
+                   ww8
+                   ww9
+                   ww10
+                   ww11 } }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fOrdPackage_$cmax ::
+    Data.States.Package -> Data.States.Package -> Data.States.Package
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(U,U,U,U(U),U)><S(SLLLL),1*U(U,U,U,U(U),U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Data.States.Package) (y :: Data.States.Package) ->
+                 case Data.States.$fOrdPackage_$c< y x of wild {
+                   GHC.Types.False -> y GHC.Types.True -> x }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fOrdPackage_$cmin ::
+    Data.States.Package -> Data.States.Package -> Data.States.Package
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(U,U,U,U(U),U)><S(SLLLL),1*U(U,U,U,U(U),U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Data.States.Package) (y :: Data.States.Package) ->
+                 case Data.States.$fOrdPackage_$c< y x of wild {
+                   GHC.Types.False -> x GHC.Types.True -> y }) -}
+42c058c605883aaf2201904e768a6b9e
+  $fShowEvent :: GHC.Show.Show Data.States.Event
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.States.Event
+                  Data.States.$fShowEvent_$cshowsPrec
+                  Data.States.$fShowEvent_$cshow
+                  Data.States.$fShowEvent_$cshowList -}
+7ac0eb44c1d8c7011f9658cc85340970
+  $fShowEvent1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowEvent2) -}
+7613c6cb6d621ce872354cfdf4955e36
+  $fShowEvent10 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("GenericIncoming"#) -}
+fa11e51e8969b35ee1ccee7a515ca8c6
+  $fShowEvent11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowEvent12) -}
+5afc146ba191851e41f2b65554de50c6
+  $fShowEvent12 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("FMIncoming"#) -}
+cbb87fac9447e53d3803d81b8ac36789
+  $fShowEvent13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowEvent14) -}
+9a9d8b77c899a02e5f62c63a2361d52e
+  $fShowEvent14 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Manifestation"#) -}
+facbbb134532d1ab8b7edc3b63232e57
+  $fShowEvent2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("DispatchRemoval"#) -}
+7067e1169316bea194671045459955d1
+  $fShowEvent3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowEvent4) -}
+3b37616169be9466e3decb56a3d31fc1
+  $fShowEvent4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("DispatchAddtion"#) -}
+e9db4a140ab1f574261dca7e09f929ac
+  $fShowEvent5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowEvent6) -}
+34d745d103fc0315dc0540e723cb2276
+  $fShowEvent6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ISTRemoval"#) -}
+2b53392cc74e0fc41caea05577bd1061
+  $fShowEvent7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowEvent8) -}
+c48421b385b386fb1abe0f71e2e10629
+  $fShowEvent8 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ISTAddition"#) -}
+f707d2459aa964f976098b0be4fcadb1
+  $fShowEvent9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowEvent10) -}
+42c058c605883aaf2201904e768a6b9e
+  $fShowEvent_$cshow :: Data.States.Event -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Data.States.Event) ->
+                 case x of wild {
+                   Data.States.Manifestation -> Data.States.$fShowEvent13
+                   Data.States.FMIncoming -> Data.States.$fShowEvent11
+                   Data.States.GenericIncoming -> Data.States.$fShowEvent9
+                   Data.States.ISTAddition -> Data.States.$fShowEvent7
+                   Data.States.ISTRemoval -> Data.States.$fShowEvent5
+                   Data.States.DispatchAddtion -> Data.States.$fShowEvent3
+                   Data.States.DispatchRemoval -> Data.States.$fShowEvent1 }) -}
+42c058c605883aaf2201904e768a6b9e
+  $fShowEvent_$cshowList :: [Data.States.Event] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Data.States.Event]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ Data.States.Event
+                   Data.States.$w$cshowsPrec
+                   ls
+                   s) -}
+42c058c605883aaf2201904e768a6b9e
+  $fShowEvent_$cshowsPrec ::
+    GHC.Types.Int -> Data.States.Event -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [2],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Data.States.Event)
+                   (w2 :: GHC.Base.String) ->
+                 Data.States.$w$cshowsPrec w1 w2) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fShowPackage :: GHC.Show.Show Data.States.Package
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.States.Package
+                  Data.States.$fShowPackage_$cshowsPrec
+                  Data.States.$fShowPackage_$cshow
+                  Data.States.$fShowPackage_$cshowList -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fShowPackage1 :: Data.States.Package -> GHC.Show.ShowS
+  {- Arity: 1, Strictness: <S,1*U(U,U,U,1*U(U),U)>,
+     Unfolding: (\ (w :: Data.States.Package) ->
+                 case w of ww { Data.States.Package ww1 ww2 ww3 ww4 ww5 ->
+                 Data.States.$w$cshowsPrec1 0# ww1 ww2 ww3 ww4 ww5 }) -}
+9cc4d0825fc4dc337cdc1817b1fdb392
+  $fShowPackage2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+6fba0c030491e0689ad15c82efde61df
+  $fShowPackageStatus :: GHC.Show.Show Data.States.PackageStatus
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.States.PackageStatus
+                  Data.States.$fShowPackageStatus_$cshowsPrec
+                  Data.States.$fShowPackageStatus_$cshow
+                  Data.States.$fShowPackageStatus_$cshowList -}
+1b7de09a33522eba9b84350b2c4e9b6c
+  $fShowPackageStatus1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowPackageStatus2) -}
+32cbe95ad78d21df369a19d4a04c1078
+  $fShowPackageStatus10 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Manifested"#) -}
+e90b4c866bfa7fae49c3f37f91e9ae08
+  $fShowPackageStatus2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Recieved"#) -}
+db422fe4b3b04a8673e844005d2f8fb5
+  $fShowPackageStatus3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowPackageStatus4) -}
+d84480ba089bf670d14f8b8eac5e9ae9
+  $fShowPackageStatus4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Out_For_Delivery"#) -}
+fe2ca91bf4b56a66995643dade349a7a
+  $fShowPackageStatus5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowPackageStatus6) -}
+6d16bb572f401106e8bf8214e61953f0
+  $fShowPackageStatus6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Pending"#) -}
+482ec776caff8297f28b2fdf7cfdf49a
+  $fShowPackageStatus7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowPackageStatus8) -}
+6b3e17f26b3cc2a66fc643214c271012
+  $fShowPackageStatus8 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("In_Transit"#) -}
+c8d4b557fd0669d58ae6d095261c46a8
+  $fShowPackageStatus9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Data.States.$fShowPackageStatus10) -}
+6fba0c030491e0689ad15c82efde61df
+  $fShowPackageStatus_$cshow ::
+    Data.States.PackageStatus -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Data.States.PackageStatus) ->
+                 case x of wild {
+                   Data.States.Manifested -> Data.States.$fShowPackageStatus9
+                   Data.States.In_Transit -> Data.States.$fShowPackageStatus7
+                   Data.States.Pending -> Data.States.$fShowPackageStatus5
+                   Data.States.Out_For_Delivery -> Data.States.$fShowPackageStatus3
+                   Data.States.Recieved -> Data.States.$fShowPackageStatus1 }) -}
+6fba0c030491e0689ad15c82efde61df
+  $fShowPackageStatus_$cshowList ::
+    [Data.States.PackageStatus] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Data.States.PackageStatus]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ Data.States.PackageStatus
+                   Data.States.$w$cshowsPrec2
+                   ls
+                   s) -}
+6fba0c030491e0689ad15c82efde61df
+  $fShowPackageStatus_$cshowsPrec ::
+    GHC.Types.Int -> Data.States.PackageStatus -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [2],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Data.States.PackageStatus)
+                   (w2 :: GHC.Base.String) ->
+                 Data.States.$w$cshowsPrec2 w1 w2) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fShowPackage_$cshow :: Data.States.Package -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U,U,U,1*U(U),U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Data.States.Package) ->
+                 Data.States.$fShowPackage_$cshowsPrec
+                   Data.States.$fShowPackage2
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fShowPackage_$cshowList :: [Data.States.Package] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Data.States.Package]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ Data.States.Package
+                   Data.States.$fShowPackage1
+                   ls
+                   s) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  $fShowPackage_$cshowsPrec ::
+    GHC.Types.Int -> Data.States.Package -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(U,U,U,1*U(U),U)>,
+     Inline: [2],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Data.States.Package) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Data.States.Package ww3 ww4 ww5 ww6 ww7 ->
+                 Data.States.$w$cshowsPrec1 ww1 ww3 ww4 ww5 ww6 ww7 } }) -}
+62b55b7cf4163bc6b884bd15f7a32cd8
+  $tc'DispatchAddtion :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10811822543923764215##
+                   15825542366251917930##
+                   Data.States.$trModule
+                   Data.States.$tc'DispatchAddtion2
+                   0#
+                   Data.States.$tc'DispatchAddtion1) -}
+689eabb0ca1d2821eff29808548c0b79
+  $tc'DispatchAddtion1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+87690024d41d606fad095b3248d01f8c
+  $tc'DispatchAddtion2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'DispatchAddtion3) -}
+58d565af606bc8316afac91369a2aa52
+  $tc'DispatchAddtion3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'DispatchAddtion"#) -}
+d89bd11b2a6d52a529415e87eccc3506
+  $tc'DispatchRemoval :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13704670777591387020##
+                   504209535555474948##
+                   Data.States.$trModule
+                   Data.States.$tc'DispatchRemoval1
+                   0#
+                   Data.States.$tc'DispatchAddtion1) -}
+a604fbf4db2950e38399500281c0796e
+  $tc'DispatchRemoval1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'DispatchRemoval2) -}
+f2a7e750d7c4fc1720de1dd7b2fadb7d
+  $tc'DispatchRemoval2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'DispatchRemoval"#) -}
+5b07078df7ceab9eb22f04d1c7a98fca
+  $tc'FMIncoming :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3895856481515455117##
+                   2283214168994187273##
+                   Data.States.$trModule
+                   Data.States.$tc'FMIncoming1
+                   0#
+                   Data.States.$tc'DispatchAddtion1) -}
+fd8ad8da9914e350abbbe331a420feba
+  $tc'FMIncoming1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'FMIncoming2) -}
+579da68d1b1edcca99e23037affe0ca7
+  $tc'FMIncoming2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'FMIncoming"#) -}
+97789cd5c00e287f5e2d90b40ac591b5
+  $tc'GenericIncoming :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7797973723891350619##
+                   11749925271298325418##
+                   Data.States.$trModule
+                   Data.States.$tc'GenericIncoming1
+                   0#
+                   Data.States.$tc'DispatchAddtion1) -}
+99a29d4db2defde117e79370705d972c
+  $tc'GenericIncoming1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'GenericIncoming2) -}
+035cc9295155f25bc87a1fe15ef505de
+  $tc'GenericIncoming2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'GenericIncoming"#) -}
+145580e167d138ea1a8975d42b2a9a86
+  $tc'ISTAddition :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3914222683091382012##
+                   4076464322776397839##
+                   Data.States.$trModule
+                   Data.States.$tc'ISTAddition1
+                   0#
+                   Data.States.$tc'DispatchAddtion1) -}
+323a056bd698457000b22acabf13701f
+  $tc'ISTAddition1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'ISTAddition2) -}
+139aa146ffdf8c57143c41a7e2558357
+  $tc'ISTAddition2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'ISTAddition"#) -}
+c1e92331afedd1635db5c3d16c2123db
+  $tc'ISTRemoval :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2155029650870253481##
+                   15653632246163605804##
+                   Data.States.$trModule
+                   Data.States.$tc'ISTRemoval1
+                   0#
+                   Data.States.$tc'DispatchAddtion1) -}
+7a18d0dd0327b56993010ffc7bf58906
+  $tc'ISTRemoval1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'ISTRemoval2) -}
+9dbdb4505a6cf14c1ec22004a5739eaf
+  $tc'ISTRemoval2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'ISTRemoval"#) -}
+c76147b232c0ba70b02149a414ce6d57
+  $tc'In_Transit :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3331281352973300957##
+                   231093988165844694##
+                   Data.States.$trModule
+                   Data.States.$tc'In_Transit2
+                   0#
+                   Data.States.$tc'In_Transit1) -}
+fb8b67cf337fbd9e0cd66ea4ccc5d06e
+  $tc'In_Transit1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+81ebd634071ca40843ab1354b2fdf4bb
+  $tc'In_Transit2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'In_Transit3) -}
+6ac2e87ce0ba3f0acb9c746c31c5ccb5
+  $tc'In_Transit3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'In_Transit"#) -}
+b83284a7b2bae3203622c50bbc60980e
+  $tc'Manifestation :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4114932669800734156##
+                   1336912145193293211##
+                   Data.States.$trModule
+                   Data.States.$tc'Manifestation1
+                   0#
+                   Data.States.$tc'DispatchAddtion1) -}
+cc3f0421f4eab009b89aeeb0b6755aae
+  $tc'Manifestation1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'Manifestation2) -}
+359e03308f21a5e08c5ac2ea2bba73a0
+  $tc'Manifestation2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Manifestation"#) -}
+34357f1333deb455f2595cbedad1832c
+  $tc'Manifested :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11744494858140094697##
+                   5990905631732704762##
+                   Data.States.$trModule
+                   Data.States.$tc'Manifested1
+                   0#
+                   Data.States.$tc'In_Transit1) -}
+5d97be077595d3d894ecedfe2c593a35
+  $tc'Manifested1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'Manifested2) -}
+d45fa8b44038ea621b34ac758207f2fd
+  $tc'Manifested2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Manifested"#) -}
+02d6deee381751cec0b15fad8e0f1aeb
+  $tc'Out_For_Delivery :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   291554857452178409##
+                   18435591732448453744##
+                   Data.States.$trModule
+                   Data.States.$tc'Out_For_Delivery1
+                   0#
+                   Data.States.$tc'In_Transit1) -}
+30e59f7906d50f4097ff0584c265bd06
+  $tc'Out_For_Delivery1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'Out_For_Delivery2) -}
+ebd0f00b9459a816435c5d89024f5423
+  $tc'Out_For_Delivery2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Out_For_Delivery"#) -}
+8334bbeb2252f23105e1c42552567a87
+  $tc'Package :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10182093735301832474##
+                   16836621770506660104##
+                   Data.States.$trModule
+                   Data.States.$tc'Package2
+                   0#
+                   Data.States.$tc'Package1) -}
+8946e37cf88ddae0e9307dc536366469
+  $tc'Package1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+7571b0f5243d2ffe67053baf00d8023c
+  $tc'Package2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'Package3) -}
+9bf8906077b7d3b1df28494666810c13
+  $tc'Package3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Package"#) -}
+b792ffa6d3798d3bf86350a84e4f12dc
+  $tc'Pending :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4443651493385720142##
+                   1439052423443413681##
+                   Data.States.$trModule
+                   Data.States.$tc'Pending1
+                   0#
+                   Data.States.$tc'In_Transit1) -}
+2385f737137ab9292ca5986158d1b924
+  $tc'Pending1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'Pending2) -}
+90a452162f098f624ad51859022cfc87
+  $tc'Pending2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Pending"#) -}
+10eb9063d5de9a37ccba9ff923f157fb
+  $tc'Recieved :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17578766267655746161##
+                   2742086237291452959##
+                   Data.States.$trModule
+                   Data.States.$tc'Recieved1
+                   0#
+                   Data.States.$tc'In_Transit1) -}
+a4ef9d94c1b643c028b08efc872dba60
+  $tc'Recieved1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tc'Recieved2) -}
+1e0372c8e2dc9d51844b9bc6b6c90bc0
+  $tc'Recieved2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Recieved"#) -}
+e34e90f8e8c32cf0ceead61ea3f67989
+  $tcEvent :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   471524897493026269##
+                   9201690789000454541##
+                   Data.States.$trModule
+                   Data.States.$tcEvent1
+                   0#
+                   GHC.Types.krep$*) -}
+dbb14704c3f0e30b7c0312d27c4c13f4
+  $tcEvent1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tcEvent2) -}
+cfa4c28053b117b4d74cba125b8a9f2c
+  $tcEvent2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Event"#) -}
+f22e19899cd1ff458605c6070bde40f3
+  $tcPackage :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5890988196244018003##
+                   11049298927048556586##
+                   Data.States.$trModule
+                   Data.States.$tcPackage1
+                   0#
+                   GHC.Types.krep$*) -}
+35d3b696acd21c5d91c20badd07a8a7c
+  $tcPackage1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tcPackage2) -}
+d7779bb11976340f400cc7e141d04b95
+  $tcPackage2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Package"#) -}
+0a14cc312b298947b5a7c2bba66b1914
+  $tcPackageStatus :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3820879989197394677##
+                   7490835776018109701##
+                   Data.States.$trModule
+                   Data.States.$tcPackageStatus1
+                   0#
+                   GHC.Types.krep$*) -}
+19328d560cd60e452c2b43fa13e8b7b1
+  $tcPackageStatus1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$tcPackageStatus2) -}
+46c95a99813269e9bc2420ac5c42beb8
+  $tcPackageStatus2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("PackageStatus"#) -}
+10e15aa856e0562438ec6a4bb8aec861
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Data.States.$trModule3
+                   Data.States.$trModule1) -}
+f6f41a3315470570168d58e1f2dca55e
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$trModule2) -}
+6ec16386a3ec7779618131621e505e53
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Data.States"#) -}
+b3783006873587f89b68c2faa5974745
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.States.$trModule4) -}
+412e0469560fe3b250d4fe1b9c4ba7a1
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+f58c735b2060d299a1ac2cb058fcdb3a
+  $w$c< ::
+    Data.States.PackageStatus
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.Float
+    -> [Data.States.PackageStatus]
+    -> Data.States.PackageStatus
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.Float
+    -> [Data.States.PackageStatus]
+    -> GHC.Types.Bool
+  {- Arity: 10, HasNoCafRefs,
+     Strictness: <S,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U><S,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U>,
+     Inline: [2],
+     Unfolding: (\ (ww :: Data.States.PackageStatus)
+                   (ww1 :: GHC.Base.String)
+                   (ww2 :: GHC.Base.String)
+                   (ww3 :: GHC.Types.Float)
+                   (ww4 :: [Data.States.PackageStatus])
+                   (ww5 :: Data.States.PackageStatus)
+                   (ww6 :: GHC.Base.String)
+                   (ww7 :: GHC.Base.String)
+                   (ww8 :: GHC.Types.Float)
+                   (ww9 :: [Data.States.PackageStatus]) ->
+                 let {
+                   $j :: GHC.Types.Bool <join 0>
+                   = case GHC.Classes.$fOrd[]_$s$ccompare1 ww1 ww6 of wild {
+                       GHC.Types.LT -> GHC.Types.True
+                       GHC.Types.EQ
+                       -> case GHC.Classes.$fOrd[]_$s$ccompare1 ww2 ww7 of wild1 {
+                            GHC.Types.LT -> GHC.Types.True
+                            GHC.Types.EQ
+                            -> case ww3 of wild2 { GHC.Types.F# x ->
+                               case ww8 of wild3 { GHC.Types.F# y ->
+                               case GHC.Prim.ltFloat# x y of lwild {
+                                 DEFAULT
+                                 -> case GHC.Prim.eqFloat# x y of lwild1 {
+                                      DEFAULT -> GHC.Types.False
+                                      1#
+                                      -> case GHC.Classes.$fOrd[]_$ccompare
+                                                @ Data.States.PackageStatus
+                                                Data.States.$fOrdPackageStatus
+                                                ww4
+                                                ww9 of wild4 {
+                                           DEFAULT -> GHC.Types.False
+                                           GHC.Types.LT -> GHC.Types.True } }
+                                 1# -> GHC.Types.True } } }
+                            GHC.Types.GT -> GHC.Types.False }
+                       GHC.Types.GT -> GHC.Types.False }
+                 } in
+                 case ww of wild {
+                   Data.States.Manifested
+                   -> case ww5 of wild1 {
+                        Data.States.Manifested -> $j
+                        Data.States.In_Transit -> GHC.Types.True
+                        Data.States.Pending -> GHC.Types.True
+                        Data.States.Out_For_Delivery -> GHC.Types.True
+                        Data.States.Recieved -> GHC.Types.True }
+                   Data.States.In_Transit
+                   -> case ww5 of wild1 {
+                        Data.States.Manifested -> GHC.Types.False
+                        Data.States.In_Transit -> $j
+                        Data.States.Pending -> GHC.Types.True
+                        Data.States.Out_For_Delivery -> GHC.Types.True
+                        Data.States.Recieved -> GHC.Types.True }
+                   Data.States.Pending
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.Pending -> $j
+                        Data.States.Out_For_Delivery -> GHC.Types.True
+                        Data.States.Recieved -> GHC.Types.True }
+                   Data.States.Out_For_Delivery
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Data.States.Out_For_Delivery -> $j
+                        Data.States.Recieved -> GHC.Types.True }
+                   Data.States.Recieved
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.False Data.States.Recieved -> $j } }) -}
+26690643c77e4a3e663ec70b5c5cb114
+  $w$c== ::
+    Data.States.PackageStatus
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.Float
+    -> [Data.States.PackageStatus]
+    -> Data.States.PackageStatus
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.Float
+    -> [Data.States.PackageStatus]
+    -> GHC.Types.Bool
+  {- Arity: 10, HasNoCafRefs,
+     Strictness: <S,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U><S,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U>,
+     Inline: [2],
+     Unfolding: (\ (ww :: Data.States.PackageStatus)
+                   (ww1 :: GHC.Base.String)
+                   (ww2 :: GHC.Base.String)
+                   (ww3 :: GHC.Types.Float)
+                   (ww4 :: [Data.States.PackageStatus])
+                   (ww5 :: Data.States.PackageStatus)
+                   (ww6 :: GHC.Base.String)
+                   (ww7 :: GHC.Base.String)
+                   (ww8 :: GHC.Types.Float)
+                   (ww9 :: [Data.States.PackageStatus]) ->
+                 let {
+                   $j :: GHC.Types.Bool <join 0>
+                   = case GHC.Base.eqString ww1 ww6 of wild {
+                       GHC.Types.False -> GHC.Types.False
+                       GHC.Types.True
+                       -> case GHC.Base.eqString ww2 ww7 of wild1 {
+                            GHC.Types.False -> GHC.Types.False
+                            GHC.Types.True
+                            -> case ww3 of wild2 { GHC.Types.F# x ->
+                               case ww8 of wild3 { GHC.Types.F# y ->
+                               case GHC.Prim.eqFloat# x y of lwild {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> GHC.Classes.$fEq[]_$c==
+                                      @ Data.States.PackageStatus
+                                      Data.States.$fEqPackageStatus
+                                      ww4
+                                      ww9 } } } } }
+                 } in
+                 case ww of wild {
+                   Data.States.Manifested
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.False Data.States.Manifested -> $j }
+                   Data.States.In_Transit
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.False Data.States.In_Transit -> $j }
+                   Data.States.Pending
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.False Data.States.Pending -> $j }
+                   Data.States.Out_For_Delivery
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.False Data.States.Out_For_Delivery -> $j }
+                   Data.States.Recieved
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.False Data.States.Recieved -> $j } }) -}
+9eaf85f050f0bbe45bde6ea48ebf8791
+  $w$ccompare ::
+    Data.States.PackageStatus
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.Float
+    -> [Data.States.PackageStatus]
+    -> Data.States.PackageStatus
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.Float
+    -> [Data.States.PackageStatus]
+    -> GHC.Types.Ordering
+  {- Arity: 10, HasNoCafRefs,
+     Strictness: <S,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U><S,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U>,
+     Inline: [2],
+     Unfolding: (\ (ww :: Data.States.PackageStatus)
+                   (ww1 :: GHC.Base.String)
+                   (ww2 :: GHC.Base.String)
+                   (ww3 :: GHC.Types.Float)
+                   (ww4 :: [Data.States.PackageStatus])
+                   (ww5 :: Data.States.PackageStatus)
+                   (ww6 :: GHC.Base.String)
+                   (ww7 :: GHC.Base.String)
+                   (ww8 :: GHC.Types.Float)
+                   (ww9 :: [Data.States.PackageStatus]) ->
+                 let {
+                   $j :: GHC.Types.Ordering <join 0>
+                   = case GHC.Classes.$fOrd[]_$s$ccompare1 ww1 ww6 of wild {
+                       GHC.Types.LT -> GHC.Types.LT
+                       GHC.Types.EQ
+                       -> case GHC.Classes.$fOrd[]_$s$ccompare1 ww2 ww7 of wild1 {
+                            GHC.Types.LT -> GHC.Types.LT
+                            GHC.Types.EQ
+                            -> case ww3 of wild2 { GHC.Types.F# x ->
+                               case ww8 of wild3 { GHC.Types.F# y ->
+                               case GHC.Prim.ltFloat# x y of lwild {
+                                 DEFAULT
+                                 -> case GHC.Prim.eqFloat# x y of lwild1 {
+                                      DEFAULT -> GHC.Types.GT
+                                      1#
+                                      -> GHC.Classes.$fOrd[]_$ccompare
+                                           @ Data.States.PackageStatus
+                                           Data.States.$fOrdPackageStatus
+                                           ww4
+                                           ww9 }
+                                 1# -> GHC.Types.LT } } }
+                            GHC.Types.GT -> GHC.Types.GT }
+                       GHC.Types.GT -> GHC.Types.GT }
+                 } in
+                 case ww of wild {
+                   Data.States.Manifested
+                   -> case ww5 of wild1 {
+                        Data.States.Manifested -> $j
+                        Data.States.In_Transit -> GHC.Types.LT
+                        Data.States.Pending -> GHC.Types.LT
+                        Data.States.Out_For_Delivery -> GHC.Types.LT
+                        Data.States.Recieved -> GHC.Types.LT }
+                   Data.States.In_Transit
+                   -> case ww5 of wild1 {
+                        Data.States.Manifested -> GHC.Types.GT
+                        Data.States.In_Transit -> $j
+                        Data.States.Pending -> GHC.Types.LT
+                        Data.States.Out_For_Delivery -> GHC.Types.LT
+                        Data.States.Recieved -> GHC.Types.LT }
+                   Data.States.Pending
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.GT
+                        Data.States.Pending -> $j
+                        Data.States.Out_For_Delivery -> GHC.Types.LT
+                        Data.States.Recieved -> GHC.Types.LT }
+                   Data.States.Out_For_Delivery
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.GT
+                        Data.States.Out_For_Delivery -> $j
+                        Data.States.Recieved -> GHC.Types.LT }
+                   Data.States.Recieved
+                   -> case ww5 of wild1 {
+                        DEFAULT -> GHC.Types.GT Data.States.Recieved -> $j } }) -}
+42c058c605883aaf2201904e768a6b9e
+  $w$cshowsPrec ::
+    Data.States.Event -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [2],
+     Unfolding: (\ (w :: Data.States.Event) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Data.States.Manifestation
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowEvent13 w1
+                   Data.States.FMIncoming
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowEvent11 w1
+                   Data.States.GenericIncoming
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowEvent9 w1
+                   Data.States.ISTAddition
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowEvent7 w1
+                   Data.States.ISTRemoval
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowEvent5 w1
+                   Data.States.DispatchAddtion
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowEvent3 w1
+                   Data.States.DispatchRemoval
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowEvent1 w1 }) -}
+3ff0835d9e8fc3947e4d2ced9b25c4cf
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> Data.States.PackageStatus
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.Float
+    -> [Data.States.PackageStatus]
+    -> GHC.Show.ShowS
+  {- Arity: 6, Strictness: <S,U><L,U><L,U><L,U><L,1*U(U)><L,U>,
+     Inline: [2] -}
+6fba0c030491e0689ad15c82efde61df
+  $w$cshowsPrec2 ::
+    Data.States.PackageStatus -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [2],
+     Unfolding: (\ (w :: Data.States.PackageStatus)
+                   (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Data.States.Manifested
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowPackageStatus9 w1
+                   Data.States.In_Transit
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowPackageStatus7 w1
+                   Data.States.Pending
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowPackageStatus5 w1
+                   Data.States.Out_For_Delivery
+                   -> GHC.Base.++ @ GHC.Types.Char Data.States.$fShowPackageStatus3 w1
+                   Data.States.Recieved
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Data.States.$fShowPackageStatus1
+                        w1 }) -}
+42c058c605883aaf2201904e768a6b9e
+  data Event
+    = Manifestation
+    | FMIncoming
+    | GenericIncoming
+    | ISTAddition
+    | ISTRemoval
+    | DispatchAddtion
+    | DispatchRemoval
+b1e1ee07e4b5176bfd58fb0c9708394c
+  data Package
+    = Package {status :: Data.States.PackageStatus,
+               wbn :: GHC.Base.String,
+               address :: GHC.Base.String,
+               weight :: GHC.Types.Float,
+               status_history :: [Data.States.PackageStatus]}
+6fba0c030491e0689ad15c82efde61df
+  data PackageStatus
+    = Manifested | In_Transit | Pending | Out_For_Delivery | Recieved
+b1e1ee07e4b5176bfd58fb0c9708394c
+  address :: Data.States.Package -> GHC.Base.String
+  RecSel Left Data.States.Package
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLSLL),1*U(A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Data.States.Package) ->
+                 case ds of wild { Data.States.Package ds1 ds2 ds3 ds4 ds5 ->
+                 ds3 }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  status :: Data.States.Package -> Data.States.PackageStatus
+  RecSel Left Data.States.Package
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLLL),1*U(1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Data.States.Package) ->
+                 case ds of wild { Data.States.Package ds1 ds2 ds3 ds4 ds5 ->
+                 ds1 }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  status_history ::
+    Data.States.Package -> [Data.States.PackageStatus]
+  RecSel Left Data.States.Package
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLLS),1*U(A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Data.States.Package) ->
+                 case ds of wild { Data.States.Package ds1 ds2 ds3 ds4 ds5 ->
+                 ds5 }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  wbn :: Data.States.Package -> GHC.Base.String
+  RecSel Left Data.States.Package
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLLL),1*U(A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Data.States.Package) ->
+                 case ds of wild { Data.States.Package ds1 ds2 ds3 ds4 ds5 ->
+                 ds2 }) -}
+b1e1ee07e4b5176bfd58fb0c9708394c
+  weight :: Data.States.Package -> GHC.Types.Float
+  RecSel Left Data.States.Package
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSL),1*U(A,A,A,1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Data.States.Package) ->
+                 case ds of wild { Data.States.Package ds1 ds2 ds3 ds4 ds5 ->
+                 ds4 }) -}
+instance [safe] GHC.Classes.Eq [Data.States.Event]
+  = Data.States.$fEqEvent
+instance [safe] GHC.Classes.Eq [Data.States.Package]
+  = Data.States.$fEqPackage
+instance [safe] GHC.Classes.Eq [Data.States.PackageStatus]
+  = Data.States.$fEqPackageStatus
+instance [safe] GHC.Classes.Ord [Data.States.Package]
+  = Data.States.$fOrdPackage
+instance [safe] GHC.Classes.Ord [Data.States.PackageStatus]
+  = Data.States.$fOrdPackageStatus
+instance [safe] GHC.Show.Show [Data.States.Event]
+  = Data.States.$fShowEvent
+instance [safe] GHC.Show.Show [Data.States.Package]
+  = Data.States.$fShowPackage
+instance [safe] GHC.Show.Show [Data.States.PackageStatus]
+  = Data.States.$fShowPackageStatus
+trusted: safe
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

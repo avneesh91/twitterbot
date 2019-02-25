@@ -1,0 +1,13 @@
+Configuring terminal-size-0.3.2.1...
+Preprocessing library for terminal-size-0.3.2.1..
+Posix.hsc:24:0: warning: "hsc_alignment" redefined
+In file included from .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Console/Terminal/Posix_hsc_make.c:1:0:
+/home/mightymosquito/.stack/programs/x86_64-linux/ghc-8.6.3/lib/ghc-8.6.3/template-hsc.h:91:0: note: this is the location of the previous definition
+ #define hsc_alignment(x...)                                           \
+ ^
+Building library for terminal-size-0.3.2.1..
+[1 of 3] Compiling System.Console.Terminal.Common ( src/System/Console/Terminal/Common.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Console/Terminal/Common.o )
+[2 of 3] Compiling System.Console.Terminal.Posix ( .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Console/Terminal/Posix.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Console/Terminal/Posix.o )
+[3 of 3] Compiling System.Console.Terminal.Size ( src/System/Console/Terminal/Size.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Console/Terminal/Size.o )
+Installing library in /home/mightymosquito/.stack/snapshots/x86_64-linux/lts-13.3/8.6.3/lib/x86_64-linux-ghc-8.6.3/terminal-size-0.3.2.1-Hh6hFaOyLfiJ6x0AenX2yY
+Registering library for terminal-size-0.3.2.1..

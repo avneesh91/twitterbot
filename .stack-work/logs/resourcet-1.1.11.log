@@ -1,0 +1,138 @@
+Configuring resourcet-1.1.11...
+Preprocessing library for resourcet-1.1.11..
+Building library for resourcet-1.1.11..
+[1 of 5] Compiling Data.Acquire.Internal ( Data/Acquire/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Acquire/Internal.o )
+[2 of 5] Compiling Control.Monad.Trans.Resource.Internal ( Control/Monad/Trans/Resource/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Control/Monad/Trans/Resource/Internal.o )
+
+[;1mControl/Monad/Trans/Resource/Internal.hs:51:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    Module ‘Control.Monad.Trans.List’ is deprecated:
+      This transformer is invalid on most monads[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m51 |[0m[0m [;1m[35mimport Control.Monad.Trans.List     ( ListT    )[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource/Internal.hs:53:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    Module ‘Control.Monad.Trans.Error’ is deprecated:
+      Use Control.Monad.Trans.Except instead[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m53 |[0m[0m [;1m[35mimport Control.Monad.Trans.Error    ( ErrorT, Error)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource/Internal.hs:80:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdodgy-imports[0m[0m[;1m][0m[0m[;1m
+    Module ‘Prelude’ does not export ‘catch’[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m80 |[0m[0m [;1m[35mimport Prelude hiding (catch)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource/Internal.hs:152:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-methods[0m[0m[;1m][0m[0m[;1m
+    • No explicit implementation for
+        ‘generalBracket’
+    • In the instance declaration for ‘MonadMask (ResourceT m)’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m152 |[0m[0m instance [;1m[35mMonadMask m => MonadMask (ResourceT m)[0m[0m where
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource/Internal.hs:304:46: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ListT’
+    (imported from Control.Monad.Trans.List):
+    Deprecated: "This transformer is invalid on most monads"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m304 |[0m[0m GO(ListT)[;1m[35m[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m                                              ^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource/Internal.hs:306:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Error’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m306 |[0m[0m GOX(Error [;1m[35me, Er[0m[0mrorT e)
+[;1m[34m    |[0m[0m[;1m[35m           ^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource/Internal.hs:306:56: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m306 |[0m[0m GOX(Error e, ErrorT e)[;1m[35m[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m                                                        ^^^^^^[0m[0m
+[0m[0m[0m[3 of 5] Compiling Control.Monad.Trans.Resource ( Control/Monad/Trans/Resource.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Control/Monad/Trans/Resource.o )
+
+[;1mControl/Monad/Trans/Resource.hs:58:7: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdodgy-exports[0m[0m[;1m][0m[0m[;1m
+    The export item ‘ExceptionT(..)’ suggests that
+    ‘ExceptionT’ has (in-scope) constructors or class methods,
+    but it has none[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m58 |[0m[0m     , [;1m[35mExceptionT (..)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m       ^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource.hs:68:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘throw’ from module ‘Control.Exception’ is redundant[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m68 |[0m[0m [;1m[35mimport Control.Exception (SomeException, throw)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource.hs:77:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m77 |[0m[0m [;1m[35mimport Data.Monoid (Monoid)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mControl/Monad/Trans/Resource.hs:230:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-top-binds[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘finally’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m230 |[0m[0m [;1m[35mfinally[0m[0m action cleanup =
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^[0m[0m
+[0m[0m[0m[4 of 5] Compiling Data.Acquire     ( Data/Acquire.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Acquire.o )
+
+[;1mData/Acquire.hs:72:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Monad.Trans.Resource’ is redundant
+      except perhaps to import instances from ‘Control.Monad.Trans.Resource’
+    To import instances alone, use: import Control.Monad.Trans.Resource()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m72 |[0m[0m [;1m[35mimport Control.Monad.Trans.Resource[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Acquire.hs:74:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m74 |[0m[0m [;1m[35mimport Control.Applicative (Applicative (..))[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Acquire.hs:75:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Monad.Base’ is redundant
+      except perhaps to import instances from ‘Control.Monad.Base’
+    To import instances alone, use: import Control.Monad.Base()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m75 |[0m[0m [;1m[35mimport Control.Monad.Base (MonadBase (..))[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Acquire.hs:77:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Monad.Trans.Control’ is redundant
+      except perhaps to import instances from ‘Control.Monad.Trans.Control’
+    To import instances alone, use: import Control.Monad.Trans.Control()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m77 |[0m[0m [;1m[35mimport Control.Monad.Trans.Control (MonadBaseControl, control)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Acquire.hs:79:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Typeable’ is redundant
+      except perhaps to import instances from ‘Data.Typeable’
+    To import instances alone, use: import Data.Typeable()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m79 |[0m[0m [;1m[35mimport Data.Typeable (Typeable)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Acquire.hs:80:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Monad’ is redundant
+      except perhaps to import instances from ‘Control.Monad’
+    To import instances alone, use: import Control.Monad()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m80 |[0m[0m [;1m[35mimport Control.Monad (liftM, ap)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[5 of 5] Compiling UnliftIO.Resource ( UnliftIO/Resource.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/UnliftIO/Resource.o )
+Installing library in /home/mightymosquito/Work/peripheral/.stack-work/install/x86_64-linux/lts-13.3/8.6.3/lib/x86_64-linux-ghc-8.6.3/resourcet-1.1.11-HHgJsWuxsTVGXvRgFeBmh5
+Registering library for resourcet-1.1.11..

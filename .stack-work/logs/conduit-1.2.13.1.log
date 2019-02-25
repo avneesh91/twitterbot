@@ -1,0 +1,178 @@
+Configuring conduit-1.2.13.1...
+Preprocessing library for conduit-1.2.13.1..
+Building library for conduit-1.2.13.1..
+[1 of 8] Compiling Data.Conduit.Internal.Pipe ( Data/Conduit/Internal/Pipe.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Conduit/Internal/Pipe.o )
+
+[;1mData/Conduit/Internal/Pipe.hs:235:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "conduit: CI.await >>= maybe" may never fire
+      because ‘maybe’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘maybe’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m235 |[0m[0m {-# RULES [;1m[35m"conduit: CI.await >>= maybe" forall x y. await >>= maybe x y = NeedInput y (const x)[0m[0m #-}
+[;1m[34m    |[0m[0m[;1m[35m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Internal/Pipe.hs:244:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "conduit: awaitE >>= either" may never fire
+      because ‘either’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘either’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m244 |[0m[0m {-# RULES [;1m[35m"conduit: awaitE >>= either" forall x y. awaitE >>= either x y = NeedInput y x[0m[0m #-}
+[;1m[34m    |[0m[0m[;1m[35m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Internal/Pipe.hs:286:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "lift m >>= CI.yield" may never fire
+      because ‘lift’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘lift’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m286 |[0m[0m   ; [;1m[35m"lift m >>= CI.yield" forall m. lift m >>= yield = yieldM m[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Internal/Pipe.hs:647:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "conduit: Pipe: lift x >>= f" may never fire
+      because ‘lift’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘lift’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m647 |[0m[0m {-# RULES [;1m[35m"conduit: Pipe: lift x >>= f" forall m f. lift m >>= f = PipeM (liftM f m)[0m[0m #-}
+[;1m[34m    |[0m[0m[;1m[35m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Internal/Pipe.hs:648:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "conduit: Pipe: lift x >> f" may never fire
+      because ‘lift’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘lift’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m648 |[0m[0m {-# RULES [;1m[35m"conduit: Pipe: lift x >> f" forall m f. lift m >> f = PipeM (liftM (\_ -> f) m)[0m[0m #-}
+[;1m[34m    |[0m[0m[;1m[35m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[2 of 8] Compiling Data.Conduit.Internal.Conduit ( Data/Conduit/Internal/Conduit.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Conduit/Internal/Conduit.o )
+
+[;1mData/Conduit/Internal/Conduit.hs:89:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdodgy-imports[0m[0m[;1m][0m[0m[;1m
+    Module ‘Prelude’ does not export ‘catch’[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m89 |[0m[0m [;1m[35mimport Prelude hiding (catch)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Internal/Conduit.hs:880:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "conduit: await >>= maybe" may never fire
+      because ‘maybe’ might inline first
+    Probable fix: add an INLINE[n] or NOINLINE[n] pragma for ‘maybe’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m880 |[0m[0m {-# RULES [;1m[35m"conduit: await >>= maybe" forall x y. await >>= maybe x y = await' x y[0m[0m #-}
+[;1m[34m    |[0m[0m[;1m[35m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[3 of 8] Compiling Data.Conduit.Internal.Fusion ( Data/Conduit/Internal/Fusion.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Conduit/Internal/Fusion.o )
+[4 of 8] Compiling Data.Conduit.Internal.List.Stream ( Data/Conduit/Internal/List/Stream.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Conduit/Internal/List/Stream.o )
+[5 of 8] Compiling Data.Conduit     ( Data/Conduit.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Conduit.o )
+[6 of 8] Compiling Data.Conduit.Internal ( Data/Conduit/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Conduit/Internal.o )
+[7 of 8] Compiling Data.Conduit.Lift ( Data/Conduit/Lift.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Conduit/Lift.o )
+
+[;1mData/Conduit/Lift.hs:83:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    Module ‘Control.Monad.Trans.Error’ is deprecated:
+      Use Control.Monad.Trans.Except instead[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m83 |[0m[0m [;1m[35mimport qualified Control.Monad.Trans.Error as E[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:187:26: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m187 |[0m[0m   :: (Monad m, Monad (t ([;1m[35mE.ErrorT[0m[0m e m)), MonadTrans t, E.Error e,
+[;1m[34m    |[0m[0m[;1m[35m                          ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:187:56: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Error’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m187 |[0m[0m   :: (Monad m, Monad (t (E.ErrorT e m)), MonadTrans t, [;1m[35mE.Error[0m[0m e,
+[;1m[34m    |[0m[0m[;1m[35m                                                        ^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:189:29: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m189 |[0m[0m      t m (Either e b) -> t ([;1m[35mE.ErrorT[0m[0m e m) b
+[;1m[34m    |[0m[0m[;1m[35m                             ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:192:12: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of data constructor ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m192 |[0m[0m     lift $ [;1m[35mE.ErrorT[0m[0m (return x)
+[;1m[34m    |[0m[0m[;1m[35m            ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:198:16: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Error’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m198 |[0m[0m   :: (Monad m, [;1m[35mE.Error[0m[0m e) =>
+[;1m[34m    |[0m[0m[;1m[35m                ^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:199:20: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m199 |[0m[0m      ConduitM i o ([;1m[35mE.ErrorT[0m[0m e m) r -> ConduitM i o m (Either e r)
+[;1m[34m    |[0m[0m[;1m[35m                    ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:204:25: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m204 |[0m[0m                 eres <- [;1m[35mE.runErrorT[0m[0m mp
+[;1m[34m    |[0m[0m[;1m[35m                         ^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:209:56: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m209 |[0m[0m             go (HaveOutput p f o) = HaveOutput (go p) ([;1m[35mE.runErrorT[0m[0m f >> return ()) o
+[;1m[34m    |[0m[0m[;1m[35m                                                        ^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:218:16: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Error’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m218 |[0m[0m   :: (Monad m, [;1m[35mE.Error[0m[0m e) =>
+[;1m[34m    |[0m[0m[;1m[35m                ^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:219:20: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m219 |[0m[0m      ConduitM i o ([;1m[35mE.ErrorT[0m[0m e m) r
+[;1m[34m    |[0m[0m[;1m[35m                    ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:220:29: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m220 |[0m[0m      -> (e -> ConduitM i o ([;1m[35mE.ErrorT[0m[0m e m) r)
+[;1m[34m    |[0m[0m[;1m[35m                             ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:221:23: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m221 |[0m[0m      -> ConduitM i o ([;1m[35mE.ErrorT[0m[0m e m) r
+[;1m[34m    |[0m[0m[;1m[35m                       ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mData/Conduit/Lift.hs:226:32: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m226 |[0m[0m                 eres <- lift $ [;1m[35mE.runErrorT[0m[0m mp
+[;1m[34m    |[0m[0m[;1m[35m                                ^^^^^^^^^^^[0m[0m
+[0m[0m[0m[8 of 8] Compiling Data.Conduit.List ( Data/Conduit/List.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Conduit/List.o )
+Installing library in /home/mightymosquito/Work/peripheral/.stack-work/install/x86_64-linux/lts-13.3/8.6.3/lib/x86_64-linux-ghc-8.6.3/conduit-1.2.13.1-3UdFFsLTUTw9ZsrBsYzRo3
+Registering library for conduit-1.2.13.1..

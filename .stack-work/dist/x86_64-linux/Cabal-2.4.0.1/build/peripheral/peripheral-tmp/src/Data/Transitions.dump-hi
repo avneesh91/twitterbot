@@ -1,0 +1,136 @@
+
+==================== FINAL INTERFACE ====================
+2019-01-29 16:52:45.431913152 UTC
+
+interface main:Data.Transitions 8063
+  interface hash: 0d06a1f0c83f28586e06b371921c303c
+  ABI hash: 5b13054ae71a99673597fdfa0ac6ed1e
+  export-list hash: 11e08c10da7ff2a8d2061062bac094d7
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: fe3741a5efca0c2476521370e88c2055
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.Transitions.mark_in_transit
+  Data.Transitions.mark_manifested
+  Data.Transitions.update_event
+module dependencies: Data.States
+package dependencies: base-4.12.0.0* ghc-prim-0.5.3
+                      integer-gmp-1.0.2.0
+orphans: base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity base-4.12.0.0:Data.Monoid
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:GHC.Generics
+                         base-4.12.0.0:GHC.IO.Exception
+import  -/  base-4.12.0.0:GHC.Base cc906f98291a1b830546e99a96674547
+import  -/  base-4.12.0.0:Prelude 5c01365ec01f83bd405ac01cbb9a8d76
+import  -/  ghc-prim-0.5.3:GHC.Classes e0d9c979f6368701f34fa421754d2cce
+import  -/  Data.States 23f0d86d95fe86e27f2223f01880787d
+  exports: 177430a920cef1feb81bffd64ab6844e
+  Event 42c058c605883aaf2201904e768a6b9e
+  FMIncoming a6f51053006d8ae0d7e741a39a82516a
+  In_Transit 7ea65d2c8347c9082eeaa9b3cff32392
+  Manifestation 2708ce799bd29d486c7709b0250eca85
+  Manifested 663bf9d99a303f6d14719d42cc39b877
+  Package b1e1ee07e4b5176bfd58fb0c9708394c
+  status b1e1ee07e4b5176bfd58fb0c9708394c
+  status_history b1e1ee07e4b5176bfd58fb0c9708394c
+128885c5f23d02894088cf7d5990719e
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Data.Transitions.$trModule3
+                   Data.Transitions.$trModule1) -}
+d8338f2b1d1bb1724411f5b0738eeb8a
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.Transitions.$trModule2) -}
+778c1b74119062834c82f23b80703d2c
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Data.Transitions"#) -}
+90ee1867df9ad8ce2740b543d490a2c7
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Data.Transitions.$trModule4) -}
+74f4dfb624786b9ff6567a40f8b81520
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+51ce849f4d742c1f6d7249c882dbcb1b
+  mark_in_transit :: Data.States.Package -> Data.States.Package
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(A,U,U,U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (package :: Data.States.Package) ->
+                 case package of wild { Data.States.Package ds ds1 ds2 ds3 ds4 ->
+                 Data.States.Package
+                   Data.States.In_Transit
+                   ds1
+                   ds2
+                   ds3
+                   (GHC.Types.:
+                      @ Data.States.PackageStatus
+                      Data.States.In_Transit
+                      ds4) }) -}
+e94de3eac3d8db886473f3a922b8573d
+  mark_manifested :: Data.States.Package -> Data.States.Package
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(A,U,U,U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (package :: Data.States.Package) ->
+                 case package of wild { Data.States.Package ds ds1 ds2 ds3 ds4 ->
+                 Data.States.Package
+                   Data.States.Manifested
+                   ds1
+                   ds2
+                   ds3
+                   (GHC.Types.:
+                      @ Data.States.PackageStatus
+                      Data.States.Manifested
+                      ds4) }) -}
+79d63b454cd91e4071bd7c2c7dc68671
+  update_event ::
+    Data.States.Package -> Data.States.Event -> Data.States.Package
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U,U,U,U)><S,1*U>m,
+     Inline: [2],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Data.States.Package) (w1 :: Data.States.Event) ->
+                 case w of ww { Data.States.Package ww1 ww2 ww3 ww4 ww5 ->
+                 case w1 of wild {
+                   Data.States.Manifestation
+                   -> Data.States.Package
+                        Data.States.Manifested
+                        ww2
+                        ww3
+                        ww4
+                        (GHC.Types.:
+                           @ Data.States.PackageStatus
+                           Data.States.Manifested
+                           ww5)
+                   Data.States.FMIncoming
+                   -> Data.States.Package
+                        Data.States.In_Transit
+                        ww2
+                        ww3
+                        ww4
+                        (GHC.Types.:
+                           @ Data.States.PackageStatus
+                           Data.States.In_Transit
+                           ww5)
+                   Data.States.GenericIncoming
+                   -> Data.States.Package ww1 ww2 ww3 ww4 ww5
+                   Data.States.ISTAddition -> Data.States.Package ww1 ww2 ww3 ww4 ww5
+                   Data.States.ISTRemoval -> Data.States.Package ww1 ww2 ww3 ww4 ww5
+                   Data.States.DispatchAddtion
+                   -> Data.States.Package ww1 ww2 ww3 ww4 ww5
+                   Data.States.DispatchRemoval
+                   -> Data.States.Package ww1 ww2 ww3 ww4 ww5 } }) -}
+trusted: safe
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

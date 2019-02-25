@@ -1,0 +1,116 @@
+[1 of 2] Compiling Main             ( /tmp/stack12077/twitter-conduit-0.3.0/Setup.hs, /tmp/stack12077/twitter-conduit-0.3.0/.stack-work/dist/x86_64-linux/Cabal-2.4.0.1/setup/Main.o )
+[2 of 2] Compiling StackSetupShim   ( /home/mightymosquito/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /tmp/stack12077/twitter-conduit-0.3.0/.stack-work/dist/x86_64-linux/Cabal-2.4.0.1/setup/StackSetupShim.o )
+Linking /tmp/stack12077/twitter-conduit-0.3.0/.stack-work/dist/x86_64-linux/Cabal-2.4.0.1/setup/setup ...
+Configuring twitter-conduit-0.3.0...
+Preprocessing library for twitter-conduit-0.3.0..
+Building library for twitter-conduit-0.3.0..
+[ 1 of 12] Compiling Web.Twitter.Conduit.Cursor ( Web/Twitter/Conduit/Cursor.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Cursor.o )
+[ 2 of 12] Compiling Web.Twitter.Conduit.Request ( Web/Twitter/Conduit/Request.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Request.o )
+[ 3 of 12] Compiling Web.Twitter.Conduit.Parameters.TH ( Web/Twitter/Conduit/Parameters/TH.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Parameters/TH.o )
+[ 4 of 12] Compiling Web.Twitter.Conduit.Parameters ( Web/Twitter/Conduit/Parameters.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Parameters.o )
+[ 5 of 12] Compiling Web.Twitter.Conduit.Response ( Web/Twitter/Conduit/Response.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Response.o )
+[ 6 of 12] Compiling Web.Twitter.Conduit.Lens ( Web/Twitter/Conduit/Lens.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Lens.o )
+[ 7 of 12] Compiling Web.Twitter.Conduit.Types ( Web/Twitter/Conduit/Types.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Types.o )
+[ 8 of 12] Compiling Web.Twitter.Conduit.Base ( Web/Twitter/Conduit/Base.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Base.o )
+
+[;1mWeb/Twitter/Conduit/Base.hs:33:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Monad.Base’ is redundant
+      except perhaps to import instances from ‘Control.Monad.Base’
+    To import instances alone, use: import Control.Monad.Base()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m33 |[0m[0m [;1m[35mimport Control.Monad.Base[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:44:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m44 |[0m[0m [;1m[35mimport Data.Monoid[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:231:20: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Source’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use ConduitT directly"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m231 |[0m[0m                 -> [;1m[35mC.Source[0m[0m m responseType
+[;1m[34m    |[0m[0m[;1m[35m                    ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:254:21: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Source’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use ConduitT directly"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m254 |[0m[0m                  -> [;1m[35mC.Source[0m[0m m Value
+[;1m[34m    |[0m[0m[;1m[35m                     ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:277:21: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Source’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use ConduitT directly"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m277 |[0m[0m                  -> [;1m[35mC.Source[0m[0m m responseType
+[;1m[34m    |[0m[0m[;1m[35m                     ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:298:22: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Source’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use ConduitT directly"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m298 |[0m[0m                   -> [;1m[35mC.Source[0m[0m m Value
+[;1m[34m    |[0m[0m[;1m[35m                      ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:317:44: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Source’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use ConduitT directly"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m317 |[0m[0m                        -> m (SearchResult ([;1m[35mC.Source[0m[0m m responseType))
+[;1m[34m    |[0m[0m[;1m[35m                                            ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:339:45: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Source’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use ConduitT directly"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m339 |[0m[0m                         -> m (SearchResult ([;1m[35mC.Source[0m[0m m Value))
+[;1m[34m    |[0m[0m[;1m[35m                                             ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:359:18: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Consumer’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use ConduitT directly"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m359 |[0m[0m             ) => [;1m[35mC.Consumer[0m[0m ByteString m Value
+[;1m[34m    |[0m[0m[;1m[35m                  ^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Base.hs:364:22: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘Consumer’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use ConduitT directly"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m364 |[0m[0m                 ) => [;1m[35mC.Consumer[0m[0m ByteString m a
+[;1m[34m    |[0m[0m[;1m[35m                      ^^^^^^^^^^[0m[0m
+[0m[0m[0m[ 9 of 12] Compiling Web.Twitter.Conduit.Stream ( Web/Twitter/Conduit/Stream.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Stream.o )
+
+[;1mWeb/Twitter/Conduit/Stream.hs:42:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The qualified import of ‘Data.Conduit.Internal’ is redundant
+      except perhaps to import instances from ‘Data.Conduit.Internal’
+    To import instances alone, use: import Data.Conduit.Internal()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m42 |[0m[0m [;1m[35mimport qualified Data.Conduit.Internal as CI[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mWeb/Twitter/Conduit/Stream.hs:103:65: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘=$’
+    (imported from Data.Conduit, but defined in conduit-1.3.1:Data.Conduit.Internal.Conduit):
+    Deprecated: "Use .|"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m103 |[0m[0m     sinkFromJSONIgnoreSpaces = CL.filter (not . S8.all isSpace) [;1m[35mC.=$[0m[0m sinkFromJSON
+[;1m[34m    |[0m[0m[;1m[35m                                                                 ^^^^[0m[0m
+[0m[0m[0m[10 of 12] Compiling Web.Twitter.Conduit.Status ( Web/Twitter/Conduit/Status.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Status.o )
+[11 of 12] Compiling Web.Twitter.Conduit.Api ( Web/Twitter/Conduit/Api.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit/Api.o )
+[12 of 12] Compiling Web.Twitter.Conduit ( Web/Twitter/Conduit.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Conduit.o )
+Installing library in /home/mightymosquito/Work/peripheral/.stack-work/install/x86_64-linux/lts-13.3/8.6.3/lib/x86_64-linux-ghc-8.6.3/twitter-conduit-0.3.0-9lWbtAKfAlZ6QvtUIamEIs
+Registering library for twitter-conduit-0.3.0..

@@ -1,0 +1,9 @@
+[1 of 2] Compiling Main             ( /tmp/stack12077/lens-aeson-1.0.2/Setup.lhs, /tmp/stack12077/lens-aeson-1.0.2/.stack-work/dist/x86_64-linux/Cabal-2.4.0.1/setup/Main.o )
+[2 of 2] Compiling StackSetupShim   ( /home/mightymosquito/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /tmp/stack12077/lens-aeson-1.0.2/.stack-work/dist/x86_64-linux/Cabal-2.4.0.1/setup/StackSetupShim.o )
+Linking /tmp/stack12077/lens-aeson-1.0.2/.stack-work/dist/x86_64-linux/Cabal-2.4.0.1/setup/setup ...
+Configuring lens-aeson-1.0.2...
+Preprocessing library for lens-aeson-1.0.2..
+Building library for lens-aeson-1.0.2..
+[1 of 1] Compiling Data.Aeson.Lens  ( src/Data/Aeson/Lens.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Aeson/Lens.o )
+Installing library in /home/mightymosquito/.stack/snapshots/x86_64-linux/lts-13.3/8.6.3/lib/x86_64-linux-ghc-8.6.3/lens-aeson-1.0.2-4YcyuxUov7wB89HlklO8mU
+Registering library for lens-aeson-1.0.2..
