@@ -1,7 +1,0 @@
-Configuring twitter-types-lens-0.7.2...
-Preprocessing library for twitter-types-lens-0.7.2..
-Building library for twitter-types-lens-0.7.2..
-[1 of 2] Compiling Web.Twitter.Types.Lens.TH ( Web/Twitter/Types/Lens/TH.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Types/Lens/TH.o )
-[2 of 2] Compiling Web.Twitter.Types.Lens ( Web/Twitter/Types/Lens.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Web/Twitter/Types/Lens.o )
-Installing library in /home/mightymosquito/Work/peripheral/.stack-work/install/x86_64-linux/lts-13.3/8.6.3/lib/x86_64-linux-ghc-8.6.3/twitter-types-lens-0.7.2-EECDbUwYjmLBQTf5s7bzsH
-Registering library for twitter-types-lens-0.7.2..
