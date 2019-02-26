@@ -1,8 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE TemplateHaskell #-}
 
 module Utils.Auth where
 
+import Control.Lens
 import qualified Web.Authenticate.OAuth as OA
 import qualified Web.Twitter.Conduit.Types as TP
 import qualified System.Environment as E
@@ -12,6 +14,8 @@ import Data.ByteString.Char8 as BC
 data Authentication = Auth { consumerAuth ::OA.OAuth ,
                              userCredentials:: OA.Credential
                            } deriving (Show)
+
+makeLenses ''Authentication
 
 getCredentials :: IO Authentication
 getCredentials = do
@@ -38,6 +42,3 @@ getTwitterCredentials = do
               oauthTokenSecret <- dataGetter "oauthTokenSecret"
               let credentials =  OA.Credential [("oauth_token", oauthToken), ("oauth_token_secret",  oauthTokenSecret)]
               return credentials
-
-
-

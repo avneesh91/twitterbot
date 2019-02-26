@@ -1,6 +1,8 @@
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE TemplateHaskell #-}
 module Main where
+
 
 import Conduit
 import Control.Lens
@@ -9,15 +11,15 @@ import Web.Twitter.Types.Lens
 import Control.Monad.IO.Class
 import Control.Monad.Trans.Resource
 
-
+import qualified Katip as LG
+import qualified Data.Text as T
+import qualified Utils.Auth as UA
+import qualified Data.Conduit as C
+import qualified Data.Text.IO as T
+import qualified Data.Conduit.List as CL
+import qualified Data.ByteString.Char8 as B8
 import qualified Web.Twitter.Conduit.Stream as ST
 import qualified Web.Twitter.Conduit.Parameters as P
-import qualified Data.ByteString.Char8 as B8
-import qualified Data.Conduit as C
-import qualified Data.Conduit.List as CL
-import qualified Data.Text as T
-import qualified Data.Text.IO as T
-import qualified Utils.Auth as UA
 
 twInfo :: UA.Authentication -> TWInfo
 twInfo credentials = twitterLoginAuth
@@ -47,6 +49,7 @@ printTL (SRetweetedStatus s) = T.putStrLn $ T.concat [ s ^. user . userScreenNam
                                                      , showStatus (s ^. rsRetweetedStatus)
                                                      ]
 printTL x = print x
+
 
 main :: IO()
 main = getStream

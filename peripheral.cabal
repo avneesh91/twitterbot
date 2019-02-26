@@ -34,3 +34,4 @@ executable peripheral
                      , filepath >= 1.4.2.1
                      , process >= 1.6.3.0
                      , authenticate-oauth >= 1.6
+                     , katip >= 0.7.0.0
