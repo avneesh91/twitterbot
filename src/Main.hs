@@ -27,20 +27,6 @@ import System.IO (hFlush, stdout)
 import qualified Web.Authenticate.OAuth as OA
 
 
--- get the oauth consumer secrets
-tokens :: OAuth
-tokens = twitterOAuth
-    { oauthConsumerKey = "asfdas"
-    , oauthConsumerSecret = "sdf"
-    }
-
--- get the oauth secrets
-credential :: Credential
-credential = Credential
-            [("oauth_token", "fsdaa"),
-             ("oauth_token_secret", "sadfas")]
-
-
 twInfo :: IO TWInfo
 twInfo = do
         credentials <- UA.getCredentials
