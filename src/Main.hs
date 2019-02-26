@@ -23,24 +23,20 @@ import Control.Monad.IO.Class
 
 import qualified Utils.Auth as UA
 
-import System.IO (hFlush, stdout)
-import qualified Web.Authenticate.OAuth as OA
 
 
-twInfo :: IO TWInfo
-twInfo = do
-        credentials <- UA.getCredentials
-        let tokens = UA.consumerAuth credentials
-        let oauthCredentials = UA.userCredentials credentials
-        let twitterLoginAuth = TWInfo{ twToken = TWToken tokens oauthCredentials, twProxy = Nothing}
-        return twitterLoginAuth
+twInfo :: UA.Authentication -> TWInfo
+twInfo credentials = twitterLoginAuth
+        where tokens = UA.consumerAuth credentials
+              oauthCredentials = UA.userCredentials credentials
+              twitterLoginAuth = TWInfo{ twToken = TWToken tokens oauthCredentials, twProxy = Nothing}
 
 getManager :: IO Manager
 getManager = newManager tlsManagerSettings
 
 getStream =  do
                mgr <- getManager
-               impureTWInfo <- twInfo
+               impureTWInfo <- fmap twInfo UA.getCredentials
                runResourceT $ do
                    src <- stream impureTWInfo mgr $ statusesFilter [Track ["python", "Node.js"]]
                    C.runConduit $ src C..| CL.mapM_ (lift . printTL)
