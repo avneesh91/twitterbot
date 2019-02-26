@@ -3,27 +3,21 @@
 module Main where
 
 import Conduit
-import Control.Monad.IO.Class
+import Control.Lens
 import Web.Twitter.Conduit
+import Web.Twitter.Types.Lens
+import Control.Monad.IO.Class
 import Control.Monad.Trans.Resource
+
+
 import qualified Web.Twitter.Conduit.Stream as ST
 import qualified Web.Twitter.Conduit.Parameters as P
-import Web.Twitter.Types.Lens
-
-import Control.Lens
 import qualified Data.ByteString.Char8 as B8
 import qualified Data.Conduit as C
 import qualified Data.Conduit.List as CL
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
-
-import Control.Monad.Trans.Resource
-import Control.Monad.IO.Class
-
-
 import qualified Utils.Auth as UA
-
-
 
 twInfo :: UA.Authentication -> TWInfo
 twInfo credentials = twitterLoginAuth

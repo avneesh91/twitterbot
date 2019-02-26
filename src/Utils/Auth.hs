@@ -13,12 +13,6 @@ data Authentication = Auth { consumerAuth ::OA.OAuth ,
                              userCredentials:: OA.Credential
                            } deriving (Show)
 
--- getConsumerAuth ::  IO Authentication -> OA.OAuth
--- getConsumerAuth a  = a >>= \x -> return $ consumerAuth x
-
--- getUserCredentials :: IO Authentication -> IO OA.Credential
--- getUserCredentials a = a >>= \x -> return $ userCredentials x
-
 getCredentials :: IO Authentication
 getCredentials = do
                twitterOAuth <- getTwitterOAuth
@@ -26,11 +20,9 @@ getCredentials = do
                let authObj = Auth twitterOAuth twitterCredentials
                return authObj
 
-getByteString :: IO String -> IO BC.ByteString
-getByteString a = a >>= \x -> return $ BC.pack x
 
 dataGetter :: String -> IO BC.ByteString
-dataGetter = getByteString . E.getEnv
+dataGetter = fmap BC.pack . E.getEnv
 
 getTwitterOAuth :: IO OA.OAuth
 getTwitterOAuth = do
