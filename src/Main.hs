@@ -11,7 +11,8 @@ import Web.Twitter.Types.Lens
 import Control.Monad.IO.Class
 import Control.Monad.Trans.Resource
 
-import qualified Katip as LG
+
+import Data.String as DT
 import qualified Data.Text as T
 import qualified Utils.Auth as UA
 import qualified Data.Conduit as C
@@ -20,6 +21,9 @@ import qualified Data.Conduit.List as CL
 import qualified Data.ByteString.Char8 as B8
 import qualified Web.Twitter.Conduit.Stream as ST
 import qualified Web.Twitter.Conduit.Parameters as P
+import qualified Web.Twitter.Conduit.Api as AP
+import qualified Web.Twitter.Conduit.Request as RQ
+import qualified Web.Twitter.Types as TP
 
 twInfo :: UA.Authentication -> TWInfo
 twInfo credentials = twitterLoginAuth
@@ -41,6 +45,22 @@ showStatus :: Status -> T.Text
 showStatus s = T.concat [ s ^. user . userScreenName
                         , ":"
                         , s ^. text]
+
+getUserName :: Status -> T.Text
+getUserName currStatus = currStatus ^. user . userScreenName
+
+followUser :: StreamingAPI -> T.Text
+followUser (SStatus s) =  getUserName s
+followUser (SRetweetedStatus s) = getUserName $ s ^. rsRetweetedStatus
+
+processTweet tweet =  do
+                         mgr <- getManager
+                         impureTWInfo <- fmap twInfo UA.getCredentials
+                         origUser <- fmap followUser tweet
+                         --let userScreenName = P.ScreenNameParam origUser
+                         let followUserIntent =  AP.friendshipsCreate origUser
+                         res <- call impureTWInfo mgr followUserIntent
+                         return ()
 
 printTL :: StreamingAPI -> IO ()
 printTL (SStatus s) = T.putStrLn . showStatus $ s
