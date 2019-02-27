@@ -10,9 +10,8 @@ import Web.Twitter.Conduit
 import Web.Twitter.Types.Lens
 import Control.Monad.IO.Class
 import Control.Monad.Trans.Resource
-
-
 import Data.String as DT
+
 import qualified Data.Text as T
 import qualified Utils.Auth as UA
 import qualified Data.Conduit as C
