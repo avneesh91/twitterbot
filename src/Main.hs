@@ -38,8 +38,8 @@ getStream =  do
                mgr <- getManager
                impureTWInfo <- fmap twInfo UA.getCredentials
                runResourceT $ do
-                   src <- stream impureTWInfo mgr $ statusesFilter [Track ["python", "Node.js"]]
-                   C.runConduit $ src C..| CL.mapM_ (lift . printTL)
+                   src <- stream impureTWInfo mgr $ statusesFilter [Track ["#remote-work", "#remote-jobs", "#remotework", "#TechJobRemote", "remotework"]]
+                   C.runConduit $ src C..| CL.mapM_ (lift . processTweet)
 
 showStatus :: Status -> T.Text
 showStatus s = T.concat [ s ^. user . userScreenName
@@ -53,12 +53,14 @@ followUser :: StreamingAPI -> T.Text
 followUser (SStatus s) =  getUserName s
 followUser (SRetweetedStatus s) = getUserName $ s ^. rsRetweetedStatus
 
+processTweet :: StreamingAPI -> IO ()
 processTweet tweet =  do
                          mgr <- getManager
                          impureTWInfo <- fmap twInfo UA.getCredentials
-                         origUser <- fmap followUser tweet
-                         --let userScreenName = P.ScreenNameParam origUser
-                         let followUserIntent =  AP.friendshipsCreate origUser
+                         let origUser = followUser tweet
+                         T.putStrLn origUser
+                         let userScreenName = P.ScreenNameParam $ T.unpack origUser
+                         let followUserIntent =  AP.friendshipsCreate userScreenName
                          res <- call impureTWInfo mgr followUserIntent
                          return ()
 
