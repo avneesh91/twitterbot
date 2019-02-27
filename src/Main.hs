@@ -34,17 +34,13 @@ twInfo credentials = twitterLoginAuth
 getManager :: IO Manager
 getManager = newManager tlsManagerSettings
 
+getStream :: IO ()
 getStream =  do
                mgr <- getManager
                impureTWInfo <- fmap twInfo UA.getCredentials
                runResourceT $ do
                    src <- stream impureTWInfo mgr $ statusesFilter [Track ["#remote-work", "#remote-jobs", "#remotework", "#TechJobRemote", "remotework"]]
                    C.runConduit $ src C..| CL.mapM_ (lift . processTweet)
-
-showStatus :: Status -> T.Text
-showStatus s = T.concat [ s ^. user . userScreenName
-                        , ":"
-                        , s ^. text]
 
 getUserName :: Status -> T.Text
 getUserName currStatus = currStatus ^. user . userScreenName
@@ -63,15 +59,6 @@ processTweet tweet =  do
                          let followUserIntent =  AP.friendshipsCreate userScreenName
                          res <- call impureTWInfo mgr followUserIntent
                          return ()
-
-printTL :: StreamingAPI -> IO ()
-printTL (SStatus s) = T.putStrLn . showStatus $ s
-printTL (SRetweetedStatus s) = T.putStrLn $ T.concat [ s ^. user . userScreenName
-                                                     , ": RT @"
-                                                     , showStatus (s ^. rsRetweetedStatus)
-                                                     ]
-printTL x = print x
-
 
 main :: IO()
 main = getStream
